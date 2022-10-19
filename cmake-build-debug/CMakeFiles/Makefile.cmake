@@ -15,6 +15,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/CMakeParseArguments.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.19/Modules/Compiler/AppleClang-C.cmake"
@@ -35,6 +36,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.19.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.19.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.19.2/CMakeSystem.cmake"
+  "../libs/conanbuildinfo.cmake"
   )
 
 # The corresponding makefile is:

@@ -4,6 +4,10 @@ project(IAudioPlayer)
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR})
 
+#引入conan
+include(${CMAKE_SOURCE_DIR}/libs/conanbuildinfo.cmake)
+conan_basic_setup()
+
 
 # 源文件
 file(GLOB SOURCE_FILES
@@ -31,3 +35,5 @@ target_link_libraries(
         libswscale.a
         libpostproc.a
 )
+
+conan_target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})

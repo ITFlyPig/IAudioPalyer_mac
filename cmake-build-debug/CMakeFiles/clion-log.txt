@@ -1,4 +1,9 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/yuelinwang/Documents/C++工程/IAudioPlayer
+-- Conan: Adjusting output directories
+-- Conan: Using cmake global configuration
+-- Conan: Adjusting default RPATHs Conan policies
+-- Conan: Adjusting language standard
+-- Current conanbuildinfo.cmake directory: /Users/yuelinwang/Documents/C++工程/IAudioPlayer/libs
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug

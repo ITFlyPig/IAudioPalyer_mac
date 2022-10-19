@@ -24,7 +24,7 @@ class Resampler
 {
 private:
     // 借助其实现重采样
-    SwrContext *swr_context;
+    SwrContext *swr_context = nullptr;
     // 输入音频格式
     AudioFmt *m_src_fmt;
     // 输出音频格式

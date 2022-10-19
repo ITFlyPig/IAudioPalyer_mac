@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/Cellar/ffmpeg/5.1.2/include
+CXX_INCLUDES = -I/Users/yuelinwang/.conan/data/spdlog/1.10.0/_/_/package/15dd95bd6f55980fef06c119c2b06fcd16defb79/include -I/Users/yuelinwang/.conan/data/fmt/8.1.1/_/_/package/0929a200b9dd268a11fb98215e1f86bd4096d9cc/include -I/usr/local/Cellar/ffmpeg/5.1.2/include
 
-CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.4 -std=gnu++11
+CXX_FLAGS = -g  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.4 -DSPDLOG_FMT_EXTERNAL -DSPDLOG_COMPILED_LIB -std=gnu++11
 

@@ -10,6 +10,8 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/Users/yuelinwang/.conan/data/spdlog/1.10.0/_/_/package/15dd95bd6f55980fef06c119c2b06fcd16defb79/include"
+  "/Users/yuelinwang/.conan/data/fmt/8.1.1/_/_/package/0929a200b9dd268a11fb98215e1f86bd4096d9cc/include"
   "/usr/local/Cellar/ffmpeg/5.1.2/include"
   )
 

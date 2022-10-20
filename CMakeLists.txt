@@ -21,7 +21,7 @@ include_directories(/usr/local/Cellar/ffmpeg/5.1.2/include)
 #添加库文件搜索路径
 link_directories(/usr/local/Cellar/ffmpeg/5.1.2/lib)
 
-add_executable(IAudioPlayer main.cpp ${SOURCE_FILES} src/AudioDecoder.hpp ResampleCallBack.hpp)
+add_executable(IAudioPlayer main.cpp ${SOURCE_FILES} src/AudioDecoder.hpp ResampleCallBack.hpp src/BlockingQueue.hpp)
 
 #添加链接库
 target_link_libraries(

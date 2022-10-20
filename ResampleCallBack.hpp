@@ -20,7 +20,7 @@ private:
     FILE *fp = nullptr;
 public:
 
-    ResampleCallBack( AudioFmt *mDstFmt) :m_dst_fmt(mDstFmt) {
+    explicit ResampleCallBack( AudioFmt *mDstFmt) :m_dst_fmt(mDstFmt) {
         fp = fopen("target.pcm", "wb");
     }
 

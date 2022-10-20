@@ -104,6 +104,9 @@
 		<Unit filename="/Users/yuelinwang/Documents/C++工程/IAudioPlayer/src/AudioDecoder.hpp">
 			<Option target="IAudioPlayer"/>
 		</Unit>
+		<Unit filename="/Users/yuelinwang/Documents/C++工程/IAudioPlayer/src/BlockingQueue.hpp">
+			<Option target="IAudioPlayer"/>
+		</Unit>
 		<Unit filename="/Users/yuelinwang/Documents/C++工程/IAudioPlayer/src/log.hpp">
 			<Option target="IAudioPlayer"/>
 		</Unit>

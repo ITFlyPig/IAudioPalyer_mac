@@ -1,4 +1,5 @@
 #include <iostream>
+#include <thread>
 
 // 引用使用C编写的库需要加上 extern "C" 修饰符，否则会报错
 #ifdef __cplusplus
@@ -19,6 +20,11 @@ extern "C" {
 #include "src/AudioDecodeCallBack.hpp"
 #include "ResampleCallBack.hpp"
 #include "spdlog/spdlog.h"
+#include "src/BlockingQueue.hpp"
+
+void audio_decode();
+
+void test_block_queue();
 
 void print(AudioFmt *fmt) {
     if (fmt == nullptr)
@@ -33,21 +39,47 @@ void print(AudioFmt *fmt) {
 }
 
 int main() {
-    // 需要的音频信息，智能指针
-//    int len = 100;
-//    char ch_name[len];
-//    av_channel_name(ch_name, len, dst_channel_layout);
-// 获取声道数
 
-    spdlog::info("spdlog version {}.{}.{}", SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR, SPDLOG_VER_PATCH);
-//    std::shared_ptr<AudioFmt> dst_audio_fmt = std::make_shared<AudioFmt>(44100, av_get_channel_layout_nb_channels(
-//            AV_CH_LAYOUT_STEREO), AV_SAMPLE_FMT_S16, AV_CH_LAYOUT_STEREO);
-//    LOGD("输出音频信息：\n");
-//    print(dst_audio_fmt.get());
-//
-//    ResampleCallBack callBack(dst_audio_fmt.get());
-//    AudioDecoder audioDecoder("/Users/yuelinwang/Documents/C++工程/IAudioPlayer/assets/test.mp3", callBack);
-//    audioDecoder.startDecode();
 
     return 0;
+}
+
+// 测试阻塞队列
+void test_block_queue() {
+    BlockingQueue<int> blocking_queue(2);
+    bool is_stop = false;
+    // 开启一个线程放数据到blockingQueue
+    std::thread produce_thread([&blocking_queue, &is_stop]() {
+        for (int i = 0; i< 20; i++)
+        {
+            blocking_queue.put(const_cast<int &&>(i));
+            LOGD("生产线程将数据 %d 放入队列中, 当前队列size：%zu \n", i, blocking_queue.size());
+        }
+        is_stop = true;
+    });
+
+    std::thread consume_thread([&blocking_queue, &is_stop]() {
+        while (true)
+        {
+            auto item = blocking_queue.take();
+            LOGD("消费线程从队列中取走了数据 %d, 当前队列size：%zu \n", item, blocking_queue.size());
+            // 休眠1s
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+    });
+
+    produce_thread.join();
+    consume_thread.join();
+}
+
+void audio_decode() {
+    std::__1::shared_ptr<AudioFmt> dst_audio_fmt = std::__1::make_shared<AudioFmt>(44100, av_get_channel_layout_nb_channels(
+            AV_CH_LAYOUT_STEREO), AV_SAMPLE_FMT_S16, AV_CH_LAYOUT_STEREO);
+    LOGD("输出音频信息：\n");
+    print(dst_audio_fmt.get());
+
+    ResampleCallBack callBack(dst_audio_fmt.get());
+    AudioDecoder audioDecoder("/Users/yuelinwang/Documents/C++工程/IAudioPlayer/assets/test.mp3", callBack);
+    audioDecoder.startDecode();
 };

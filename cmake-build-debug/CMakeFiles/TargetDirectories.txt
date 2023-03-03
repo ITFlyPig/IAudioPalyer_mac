@@ -1,3 +1,3 @@
-/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles/IAudioPlayer.dir
+/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -11,6 +11,8 @@ extern "C" {
 #include "libavutil/channel_layout.h"
 #include "libavformat/avformat.h"
 
+#include "SDL.h"
+
 #ifdef __cplusplus
 }
 #endif
@@ -21,6 +23,7 @@ extern "C" {
 #include "ResampleCallBack.hpp"
 #include "spdlog/spdlog.h"
 #include "src/BlockingQueue.hpp"
+#include "src/PcmPlayer.hpp"
 
 void audio_decode();
 
@@ -39,8 +42,19 @@ void print(AudioFmt *fmt) {
 }
 
 int main() {
+    AudioFmt dst_audio_fmt = AudioFmt(44100, av_get_channel_layout_nb_channels(
+            AV_CH_LAYOUT_STEREO), AV_SAMPLE_FMT_S16, AV_CH_LAYOUT_STEREO);
+    PcmPlayer pcmPlayer(dst_audio_fmt);
+    if (!pcmPlayer.init())
+    {
+        LOGE("PcmPlayer初始化失败!");
+        return -1;
+    }
+    pcmPlayer.start_play();
+    LOGD("PcmPlayer初始化成功");
 
-
+    // 休眠60s
+    std::this_thread::sleep_for(std::chrono::seconds(60));
     return 0;
 }
 

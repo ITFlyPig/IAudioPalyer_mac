@@ -39,6 +39,7 @@ public:
         return sample_fmt;
     }
 
+
     int get_channel_layout() const {
         return channel_layout;
     }

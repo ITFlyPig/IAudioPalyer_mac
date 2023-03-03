@@ -1,0 +1,90 @@
+{
+ "options": [
+  [
+   "fmt:fPIC",
+   "True"
+  ],
+  [
+   "fmt:header_only",
+   "False"
+  ],
+  [
+   "fmt:shared",
+   "False"
+  ],
+  [
+   "fmt:with_fmt_alias",
+   "False"
+  ],
+  [
+   "fmt:with_os_api",
+   "True"
+  ],
+  [
+   "libiconv:fPIC",
+   "True"
+  ],
+  [
+   "libiconv:shared",
+   "False"
+  ],
+  [
+   "sdl:fPIC",
+   "True"
+  ],
+  [
+   "sdl:iconv",
+   "True"
+  ],
+  [
+   "sdl:opengl",
+   "True"
+  ],
+  [
+   "sdl:opengles",
+   "True"
+  ],
+  [
+   "sdl:sdl2main",
+   "True"
+  ],
+  [
+   "sdl:shared",
+   "False"
+  ],
+  [
+   "sdl:vulkan",
+   "True"
+  ],
+  [
+   "spdlog:fPIC",
+   "True"
+  ],
+  [
+   "spdlog:header_only",
+   "False"
+  ],
+  [
+   "spdlog:no_exceptions",
+   "False"
+  ],
+  [
+   "spdlog:shared",
+   "False"
+  ],
+  [
+   "spdlog:wchar_filenames",
+   "False"
+  ],
+  [
+   "spdlog:wchar_support",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": null,
+  "version": null,
+  "user": null,
+  "channel": null
+ }
+}

@@ -8,7 +8,6 @@ set(SOURCE_DIR ${CMAKE_SOURCE_DIR})
 include(${CMAKE_SOURCE_DIR}/libs/conanbuildinfo.cmake)
 conan_basic_setup()
 
-
 # 源文件
 file(GLOB SOURCE_FILES
         ${CMAKE_SOURCE_DIR}/*.hpp
@@ -17,11 +16,11 @@ file(GLOB SOURCE_FILES
 
 
 #添加头文件搜索路径
-include_directories(/usr/local/Cellar/ffmpeg/5.1.2/include)
+include_directories(/usr/local/Cellar/ffmpeg/5.1.2_4/include)
 #添加库文件搜索路径
-link_directories(/usr/local/Cellar/ffmpeg/5.1.2/lib)
+link_directories(/usr/local/Cellar/ffmpeg/5.1.2_4/lib)
 
-add_executable(IAudioPlayer main.cpp ${SOURCE_FILES} src/AudioDecoder.hpp ResampleCallBack.hpp src/BlockingQueue.hpp)
+add_executable(IAudioPlayer main.cpp ${SOURCE_FILES} src/AudioDecoder.hpp ResampleCallBack.hpp src/BlockingQueue.hpp src/PcmPlayer.hpp src/PcmFileHelper.hpp)
 
 #添加链接库
 target_link_libraries(

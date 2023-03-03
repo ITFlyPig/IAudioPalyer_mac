@@ -1,0 +1,58 @@
+[settings]
+    arch=x86_64
+    build_type=Debug
+    compiler=apple-clang
+    compiler.libcxx=libc++
+    compiler.version=13.0
+    os=Macos
+
+[requires]
+    sdl/2.Y.Z
+    spdlog/1.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Debug
+    compiler=apple-clang
+    compiler.libcxx=libc++
+    compiler.version=13.0
+    os=Macos
+    os_build=Macos
+
+[full_requires]
+    fmt/8.1.1:0929a200b9dd268a11fb98215e1f86bd4096d9cc
+    libiconv/1.17:f0ce0f189afed95b41fb2faad2f2225a7eca0d22
+    sdl/2.24.1:4731847c61a7f033e702848895d6501df96bbbbf
+    spdlog/1.10.0:15dd95bd6f55980fef06c119c2b06fcd16defb79
+
+[full_options]
+    fmt:fPIC=True
+    fmt:header_only=False
+    fmt:shared=False
+    fmt:with_fmt_alias=False
+    fmt:with_os_api=True
+    libiconv:fPIC=True
+    libiconv:shared=False
+    sdl:fPIC=True
+    sdl:iconv=True
+    sdl:opengl=True
+    sdl:opengles=True
+    sdl:sdl2main=True
+    sdl:shared=False
+    sdl:vulkan=True
+    spdlog:fPIC=True
+    spdlog:header_only=False
+    spdlog:no_exceptions=False
+    spdlog:shared=False
+    spdlog:wchar_filenames=False
+    spdlog:wchar_support=False
+
+[recipe_hash]
+
+
+[env]
+

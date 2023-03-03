@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/IAudioPlayer.dir/main.cpp.o"
+  "CMakeFiles/IAudioPlayer.dir/main.cpp.o.d"
   "bin/IAudioPlayer"
   "bin/IAudioPlayer.pdb"
 )

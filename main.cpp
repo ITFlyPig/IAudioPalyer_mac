@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <GLUT/glut.h>
 
 // 引用使用C编写的库需要加上 extern "C" 修饰符，否则会报错
 #ifdef __cplusplus
@@ -41,20 +42,34 @@ void print(AudioFmt *fmt) {
          av_sample_fmt_is_planar(fmt->get_sample_fmt()) ? "planar" : "packed");
 }
 
-int main() {
-    AudioFmt dst_audio_fmt = AudioFmt(44100, av_get_channel_layout_nb_channels(
-            AV_CH_LAYOUT_STEREO), AV_SAMPLE_FMT_S16, AV_CH_LAYOUT_STEREO);
-    PcmPlayer pcmPlayer(dst_audio_fmt);
-    if (!pcmPlayer.init())
-    {
-        LOGE("PcmPlayer初始化失败!");
-        return -1;
-    }
-    pcmPlayer.start_play();
-    LOGD("PcmPlayer初始化成功");
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("OpenGL Texture");
+    glutDisplayFunc([]() {
+        glClearColor(0.5f, 1.0f, 1.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glutSwapBuffers();
+    });
+    glutMainLoop();
 
-    // 休眠60s
-    std::this_thread::sleep_for(std::chrono::seconds(60));
+//    AudioFmt dst_audio_fmt = AudioFmt(44100, av_get_channel_layout_nb_channels(
+//            AV_CH_LAYOUT_STEREO), AV_SAMPLE_FMT_S16, AV_CH_LAYOUT_STEREO);
+//    PcmPlayer pcmPlayer(dst_audio_fmt);
+//    if (!pcmPlayer.init())
+//    {
+//        LOGE("PcmPlayer初始化失败!");
+//        return -1;
+//    }
+//    pcmPlayer.start_play();
+//    LOGD("PcmPlayer初始化成功");
+//
+//    // 休眠60s
+//    std::this_thread::sleep_for(std::chrono::seconds(60));
+
+
+
     return 0;
 }
 

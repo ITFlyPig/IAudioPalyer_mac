@@ -92,6 +92,8 @@ IAudioPlayer_EXTERNAL_OBJECTS =
 
 bin/IAudioPlayer: CMakeFiles/IAudioPlayer.dir/main.cpp.o
 bin/IAudioPlayer: CMakeFiles/IAudioPlayer.dir/build.make
+bin/IAudioPlayer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework/GLUT.tbd
+bin/IAudioPlayer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa.tbd
 bin/IAudioPlayer: CMakeFiles/IAudioPlayer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/IAudioPlayer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IAudioPlayer.dir/link.txt --verbose=$(VERBOSE)

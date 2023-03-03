@@ -174,6 +174,8 @@ public:
                         LOGE("avcodec_receive_frame 未知行为：%d", ret);
                     }
                 } while (ret == AVERROR(EAGAIN));
+                // 释放p_frame
+//                av_frame_free(&p_frame);
             }
             av_packet_unref(&packet);
         }

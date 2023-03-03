@@ -57,7 +57,7 @@ public:
         // 重采样
         uint8_t **dst_data = nullptr;
         // data 转为const
-        const auto **src_data = (const uint8_t **) data;
+        const auto src_data = (const uint8_t **) data;
         int size = m_resampler->resample(src_data, nb_samples, &dst_data);
         if (size < 0){
             LOGE("ResampleCallBack::on_decode_frame resample failed");

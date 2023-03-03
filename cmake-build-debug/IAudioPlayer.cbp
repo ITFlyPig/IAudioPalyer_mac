@@ -30,6 +30,7 @@
 					<Add directory="/Users/yuelinwang/.conan/data/fmt/8.1.1/_/_/package/0929a200b9dd268a11fb98215e1f86bd4096d9cc/include"/>
 					<Add directory="/Users/yuelinwang/.conan/data/libiconv/1.17/_/_/package/f0ce0f189afed95b41fb2faad2f2225a7eca0d22/include"/>
 					<Add directory="/usr/local/Cellar/ffmpeg/5.1.2_4/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework/Headers"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
@@ -57,6 +58,7 @@
 					<Add directory="/Users/yuelinwang/.conan/data/fmt/8.1.1/_/_/package/0929a200b9dd268a11fb98215e1f86bd4096d9cc/include"/>
 					<Add directory="/Users/yuelinwang/.conan/data/libiconv/1.17/_/_/package/f0ce0f189afed95b41fb2faad2f2225a7eca0d22/include"/>
 					<Add directory="/usr/local/Cellar/ffmpeg/5.1.2_4/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework/Headers"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
@@ -93,6 +95,9 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/yuelinwang/Documents/C++工程/IAudioPlayer/AudioFmt.hpp">
+			<Option target="IAudioPlayer"/>
+		</Unit>
+		<Unit filename="/Users/yuelinwang/Documents/C++工程/IAudioPlayer/OpenGlRender.hpp">
 			<Option target="IAudioPlayer"/>
 		</Unit>
 		<Unit filename="/Users/yuelinwang/Documents/C++工程/IAudioPlayer/ResampleCallBack.hpp">

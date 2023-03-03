@@ -263,6 +263,15 @@ CONAN_FRAMEWORK_Metal_FOUND:FILEPATH=/Applications/Xcode.app/Contents/Developer/
 //Path to a library.
 CONAN_FRAMEWORK_QuartzCore_FOUND:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/QuartzCore.framework
 
+//Path to a file.
+GLUT_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework/Headers
+
+//Cocoa framework for OSX
+GLUT_cocoa_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/Cocoa.framework
+
+//GLUT library for OSX
+GLUT_glut_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework
+
 //Value Computed by CMake
 IAudioPlayer_BINARY_DIR:STATIC=/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug
 
@@ -271,6 +280,21 @@ IAudioPlayer_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 IAudioPlayer_SOURCE_DIR:STATIC=/Users/yuelinwang/Documents/C++工程/IAudioPlayer
+
+//Include for OpenGL on OS X
+OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework
+
+//OpenGL library for OS X
+OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework
+
+//GLU library for OS X (usually same as OpenGL library)
+OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
@@ -421,6 +445,56 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding GLUT
+FIND_PACKAGE_MESSAGE_DETAILS_GLUT:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/GLUT.framework/Headers][v()]
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
+GLUT_CFLAGS:INTERNAL=
+GLUT_CFLAGS_I:INTERNAL=
+GLUT_CFLAGS_OTHER:INTERNAL=
+GLUT_FOUND:INTERNAL=
+GLUT_INCLUDEDIR:INTERNAL=
+//ADVANCED property for variable: GLUT_INCLUDE_DIR
+GLUT_INCLUDE_DIR-ADVANCED:INTERNAL=1
+GLUT_LIBDIR:INTERNAL=
+GLUT_LIBS:INTERNAL=
+GLUT_LIBS_L:INTERNAL=
+GLUT_LIBS_OTHER:INTERNAL=
+GLUT_LIBS_PATHS:INTERNAL=
+GLUT_MODULE_NAME:INTERNAL=
+GLUT_PREFIX:INTERNAL=
+GLUT_STATIC_CFLAGS:INTERNAL=
+GLUT_STATIC_CFLAGS_I:INTERNAL=
+GLUT_STATIC_CFLAGS_OTHER:INTERNAL=
+GLUT_STATIC_LIBDIR:INTERNAL=
+GLUT_STATIC_LIBS:INTERNAL=
+GLUT_STATIC_LIBS_L:INTERNAL=
+GLUT_STATIC_LIBS_OTHER:INTERNAL=
+GLUT_STATIC_LIBS_PATHS:INTERNAL=
+GLUT_VERSION:INTERNAL=
+//ADVANCED property for variable: GLUT_cocoa_LIBRARY
+GLUT_cocoa_LIBRARY-ADVANCED:INTERNAL=1
+GLUT_freeglut_INCLUDEDIR:INTERNAL=
+GLUT_freeglut_LIBDIR:INTERNAL=
+GLUT_freeglut_PREFIX:INTERNAL=
+GLUT_freeglut_VERSION:INTERNAL=
+GLUT_glut_INCLUDEDIR:INTERNAL=
+GLUT_glut_LIBDIR:INTERNAL=
+//ADVANCED property for variable: GLUT_glut_LIBRARY
+GLUT_glut_LIBRARY-ADVANCED:INTERNAL=1
+GLUT_glut_PREFIX:INTERNAL=
+GLUT_glut_VERSION:INTERNAL=
+//ADVANCED property for variable: OPENGL_INCLUDE_DIR
+OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
+__pkg_config_checked_GLUT:INTERNAL=1
 

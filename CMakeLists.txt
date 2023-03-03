@@ -20,7 +20,10 @@ include_directories(/usr/local/Cellar/ffmpeg/5.1.2_4/include)
 #添加库文件搜索路径
 link_directories(/usr/local/Cellar/ffmpeg/5.1.2_4/lib)
 
-add_executable(IAudioPlayer main.cpp ${SOURCE_FILES} src/AudioDecoder.hpp ResampleCallBack.hpp src/BlockingQueue.hpp src/PcmPlayer.hpp src/PcmFileHelper.hpp)
+add_executable(IAudioPlayer main.cpp ${SOURCE_FILES} src/AudioDecoder.hpp ResampleCallBack.hpp src/BlockingQueue.hpp src/PcmPlayer.hpp src/PcmFileHelper.hpp OpenGlRender.hpp)
+
+find_package(GLUT REQUIRED)
+find_package(OpenGL REQUIRED)
 
 #添加链接库
 target_link_libraries(
@@ -33,6 +36,8 @@ target_link_libraries(
         libswresample.a
         libswscale.a
         libpostproc.a
+        GLUT::GLUT
+        ${OPENGL_LIBRARIES}
 )
 
 conan_target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})

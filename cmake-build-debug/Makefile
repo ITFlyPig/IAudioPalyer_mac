@@ -129,6 +129,30 @@ IAudioPlayer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IAudioPlayer.dir/build.make CMakeFiles/IAudioPlayer.dir/build
 .PHONY : IAudioPlayer/fast
 
+local_libs/glad/src/glad.o: local_libs/glad/src/glad.c.o
+.PHONY : local_libs/glad/src/glad.o
+
+# target to build an object file
+local_libs/glad/src/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IAudioPlayer.dir/build.make CMakeFiles/IAudioPlayer.dir/local_libs/glad/src/glad.c.o
+.PHONY : local_libs/glad/src/glad.c.o
+
+local_libs/glad/src/glad.i: local_libs/glad/src/glad.c.i
+.PHONY : local_libs/glad/src/glad.i
+
+# target to preprocess a source file
+local_libs/glad/src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IAudioPlayer.dir/build.make CMakeFiles/IAudioPlayer.dir/local_libs/glad/src/glad.c.i
+.PHONY : local_libs/glad/src/glad.c.i
+
+local_libs/glad/src/glad.s: local_libs/glad/src/glad.c.s
+.PHONY : local_libs/glad/src/glad.s
+
+# target to generate assembly for a file
+local_libs/glad/src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IAudioPlayer.dir/build.make CMakeFiles/IAudioPlayer.dir/local_libs/glad/src/glad.c.s
+.PHONY : local_libs/glad/src/glad.c.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... IAudioPlayer"
+	@echo "... local_libs/glad/src/glad.o"
+	@echo "... local_libs/glad/src/glad.i"
+	@echo "... local_libs/glad/src/glad.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

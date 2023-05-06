@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/yuelinwang/Documents/C++工程/IAudioPlayer/local_libs/glad/src/glad.c" "CMakeFiles/IAudioPlayer.dir/local_libs/glad/src/glad.c.o" "gcc" "CMakeFiles/IAudioPlayer.dir/local_libs/glad/src/glad.c.o.d"
   "/Users/yuelinwang/Documents/C++工程/IAudioPlayer/main.cpp" "CMakeFiles/IAudioPlayer.dir/main.cpp.o" "gcc" "CMakeFiles/IAudioPlayer.dir/main.cpp.o.d"
   )
 

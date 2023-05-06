@@ -1,6 +1,8 @@
 #include <iostream>
 #include <thread>
-#include <GLUT/glut.h>
+
+#include "glad/glad.h"
+#include <GLFW/glfw3.h>
 
 // 引用使用C编写的库需要加上 extern "C" 修饰符，否则会报错
 #ifdef __cplusplus
@@ -12,7 +14,6 @@ extern "C" {
 #include "libavutil/channel_layout.h"
 #include "libavformat/avformat.h"
 
-#include "SDL.h"
 
 #ifdef __cplusplus
 }
@@ -25,6 +26,11 @@ extern "C" {
 #include "spdlog/spdlog.h"
 #include "src/BlockingQueue.hpp"
 #include "src/PcmPlayer.hpp"
+
+// 常量
+const int ERR_CODE = -1;
+const int SUCCESS_CODE = -1;
+void process_input(GLFWwindow *window);
 
 void audio_decode();
 
@@ -43,16 +49,47 @@ void print(AudioFmt *fmt) {
 }
 
 int main(int argc, char** argv) {
-    glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-    glutInitWindowSize(800, 600);
-    glutCreateWindow("OpenGL Texture");
-    glutDisplayFunc([]() {
+    //初始化GLFW
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
+#endif
+
+    // 创建窗口
+    GLFWwindow *window = glfwCreateWindow(800, 600, "OpenGLRender", nullptr, nullptr);
+    if (!window)
+    {
+        glfwTerminate();
+        std::cout << "glfwCreateWindow failed" << std::endl;
+        return ERR_CODE;
+    }
+    //通知GLFW将我们窗口的上下文设置为当前线程的主上下文
+    glfwMakeContextCurrent(window);
+    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+    {
+        return ERR_CODE;
+    }
+
+    // 循环渲染
+    while (!glfwWindowShouldClose(window))
+    {
+        // 处理输入
+        process_input(window);
+
+        // 渲染指令
         glClearColor(0.5f, 1.0f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        glutSwapBuffers();
-    });
-    glutMainLoop();
+
+        // 交换缓冲
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
+    return SUCCESS_CODE;
 
 //    AudioFmt dst_audio_fmt = AudioFmt(44100, av_get_channel_layout_nb_channels(
 //            AV_CH_LAYOUT_STEREO), AV_SAMPLE_FMT_S16, AV_CH_LAYOUT_STEREO);
@@ -112,3 +149,10 @@ void audio_decode() {
     AudioDecoder audioDecoder("/Users/yuelinwang/Documents/C++工程/IAudioPlayer/assets/test.mp3", callBack);
     audioDecoder.startDecode();
 };
+
+void process_input(GLFWwindow *window) {
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    {
+        glfwSetWindowShouldClose(window, true);
+    }
+}

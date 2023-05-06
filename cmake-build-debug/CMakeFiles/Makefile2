@@ -81,12 +81,12 @@ clean: CMakeFiles/IAudioPlayer.dir/clean
 CMakeFiles/IAudioPlayer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IAudioPlayer.dir/build.make CMakeFiles/IAudioPlayer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/IAudioPlayer.dir/build.make CMakeFiles/IAudioPlayer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target IAudioPlayer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target IAudioPlayer"
 .PHONY : CMakeFiles/IAudioPlayer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/IAudioPlayer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/IAudioPlayer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuelinwang/Documents/C++工程/IAudioPlayer/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/IAudioPlayer.dir/rule
